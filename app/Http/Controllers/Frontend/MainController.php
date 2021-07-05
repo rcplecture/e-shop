@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class MainController extends Controller
 {
     public function index(){
-        $foods = Food::all();
-        return view('frontend.index', compact('foods'));
+        $specials = Food::where('type', 1)->get();
+        $menu = Food::where('type', 2)->get();
+        return view('frontend.index', compact('specials', 'menu'));
     }
 }

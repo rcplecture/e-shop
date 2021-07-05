@@ -18,11 +18,11 @@ class FoodsController extends Controller
 
     public function store(Request $request){
         $data = $request->all();
-        $data['price'] = 100;
-        $data['image_path'] = '/ima';
-        $data['rating'] = 4;
-        $data['is_discount'] = 15;
-        $data['type'] = 1;
+        if ($request->has('image_path')){
+            $imageName = time().'.'.$request->image_path->extension();
+            $request->image_path->move(public_path('uploads'), $imageName);
+            $data['image_path'] = $imageName;
+        }
         Food::create($data);
         return redirect()->back();
     }

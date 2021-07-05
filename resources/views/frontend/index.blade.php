@@ -51,72 +51,14 @@
 <section class="menu" id="menu">
     <h1 class="heading">Our<span> menu</span></h1>
     <div class="box-container">
-
+        @foreach($menu as $food)
         <div class="box">
-            <img src="C:\Users\user\Downloads\sandwitch.jpg" alt="">
-            <h3>Sandwitch</h3>
-            <div class="price"> <span>Rs.150 </span> </div>
+            <img src="#" alt="">
+            <h3>{{ $food->name }}</h3>
+            <div class="price"> <span>{{ $food->price }}</span> </div>
             <a href="#" class="btn">Order now</a>
         </div>
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\pan.jpg" alt="">
-            <h3>pancake</h3>
-            <div class="price"> <span>Rs.180 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\omlette.jpg" alt="">
-            <h3>Omlette</h3>
-            <div class="price"> <span>Rs.180 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
-
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\momo.jpg" alt="">
-            <h3>momo</h3>
-            <div class="price"> <span>Rs.150 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
-
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\pas.jpg" alt="">
-            <h3>Pasta</h3>
-            <div class="price"> <span>Rs.200 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
-
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\pizza.jpg" alt="">
-            <h3>pizza</h3>
-            <div class="price"> <span>Rs.400 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\fried chic.jpg" alt="">
-            <h3>chicken wings</h3>
-            <div class="price"> <span>Rs.750 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\bluberrie.jpg" alt="">
-            <h3>blueberry cake</h3>
-            <div class="price"> <span>Rs.550 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
-
-        <div class="box">
-            <img src="C:\Users\user\Downloads\choco.jpg" alt="">
-            <h3>Chocolate cake</h3>
-            <div class="price"> <span>Rs.650 </span> </div>
-            <a href="#" class="btn">Order now</a>
-        </div>
+        @endforeach
     </div>
 </section>
 
@@ -126,14 +68,14 @@
 
     <h1 class="heading">Our <span>special</span></h1>
     <div class="box-container">
-        @foreach($foods as $food)
+        @foreach($specials as $food)
         <div class="box">
             <span class="discount"> - {{ $food->is_discount }} %</span>
             <div class="icons">
                 <a href="#" class="fas fa-heart"></a>
                 <a href="#" class="fas fa-shopping-cart"></a>
             </div>
-            <img src="C:\Users\user\Downloads\s-img-1.jpg" alt="">
+            <img src="{{ asset('/uploads/'.$food->image_path) }}" alt="">
             <h3>{{ $food->name }}</h3>
             <div class="stars">
                 @for($i = 1; $i <= $food->rating; $i++)

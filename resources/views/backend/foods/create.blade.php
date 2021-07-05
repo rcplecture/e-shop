@@ -16,7 +16,7 @@
         <strong>{{ $message }}</strong>
     </div>
 @endif
-<form method="post" action="{{ route('admin.food.store') }}">
+<form method="post" action="{{ route('admin.food.store') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group">
         <label for="exampleInputEmail1">Title</label>
@@ -26,7 +26,30 @@
         <label for="">Description</label>
         <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="form-group">
+        <label for="">Price</label>
+        <input type="text" name="price" class="form-control" placeholder="Enter price">
+    </div>
+    <div class="form-group">
+        <label for="">Discount %</label>
+        <input type="text" name="is_discount" class="form-control" placeholder="Enter Discount in %">
+    </div>
+    <div class="form-group">
+        <label for="">Rating</label>
+        <input type="number" name="rating" class="form-control" min="1" max="5" value="4">
+    </div>
+    <div class="form-group">
+        <label for="">Choose Image</label>
+        <input type="file" name="image_path" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Select Type</label>
+        <select name="type" id="" class="form-control">
+            <option value="1">Special</option>
+            <option value="2">Menu</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Submit</button>
 </form>
 
 
