@@ -83,7 +83,11 @@
                 @endfor
             </div>
             <div class="price"> <span>{{ $food->price }} </span> </div>
+            <div>Discounted Price :
+                {{  $food->price - $food->price * ($food->is_discount / 100) }}
+            </div>
             <div class="quantity">
+                <span class="badge badge-warning">In Stock : {{ $food->quantity }}</span>
                 <span>quantity : </span>
                 <input type="number" min="1" max="10" value="1">
             </div>
@@ -137,5 +141,15 @@
 
 </section>
 @endsection
+@section('script')
+    <script>
+        // get both value from html document
 
+        // track onchange quantity action
+
+        // calculation stock quantity
+
+        // put that value on html document
+    </script>
+@endsection
 

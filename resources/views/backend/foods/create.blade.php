@@ -39,6 +39,10 @@
         <input type="number" name="rating" class="form-control" min="1" max="5" value="4">
     </div>
     <div class="form-group">
+        <label for="">Quantity Stock</label>
+        <input type="number" name="quantity" class="form-control" min="1" max="100" value="5">
+    </div>
+    <div class="form-group">
         <label for="">Choose Image</label>
         <input type="file" name="image_path" class="form-control">
     </div>
