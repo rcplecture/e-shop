@@ -9,7 +9,8 @@ use Illuminate\Http\Request;
 class FoodsController extends Controller
 {
     public function index(){
-        return view('backend.foods.index');
+        $foods = Food::all();
+        return view('backend.foods.index', compact('foods'));
     }
 
     public function create(){

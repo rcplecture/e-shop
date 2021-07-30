@@ -25,14 +25,14 @@ Route::get('/', 'Frontend\MainController@index');
 
 
 
-Route::get('admin/foods', 'Backend\FoodsController@index');
-Route::get('admin/foods/create', 'Backend\FoodsController@create');
+Route::get('admin/foods', 'Backend\FoodsController@index')->name('food.index');
+Route::get('admin/foods/create', 'Backend\FoodsController@create')->name('food.create');
 Route::post('admin/foods', 'Backend\FoodsController@store')->name('admin.food.store');
 
 
-Route::get('tasks', 'TaskController@index')->name('task.index');
-Route::get('tasks/create', 'TaskController@create');
-Route::post('tasks/create', 'TaskController@store')->name('task.store');
-Route::get('tasks/edit/{id}', 'TaskController@edit')->name('task.edit');
-Route::put('tasks/update/{id}', 'TaskController@update')->name('task.update');
-Route::delete('tasks/delete/{id}', 'TaskController@delete')->name('task.destroy');
+//Route::get('foods', 'TaskController@index')->name('food.index');
+//Route::get('foods/create', 'TaskController@create');
+//Route::post('foods/create', 'TaskController@store')->name('food.store');
+//Route::get('foods/edit/{id}', 'TaskController@edit')->name('food.edit');
+//Route::put('foods/update/{id}', 'TaskController@update')->name('food.update');
+//Route::delete('foods/delete/{id}', 'TaskController@delete')->name('food.destroy');
